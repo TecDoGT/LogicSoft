@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link href="css/twoColLiqLtHdr.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="leaflet.css" />
+        
+		<script src="phonegap.js"></script>
+		<script src="cordova.js" type="text/javascript"></script>
+		<script src="jquery-mobile/js/jquery-1.10.2.min.js"></script>
+        
+
+        <title>Mapa</title>
+        <style>
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			html, body, #map {
+				height: 100%;
+			}
+		</style>
+    </head>
+    <body id="Cuerpo" class="BackGMap">
+    	<div id="Contenedor" class="container" align="center" >
+            <div class="header" style="background-color:#013567">
+                <a href="index.html"><img  src="images/logo.jpg" name="Insert_logo" width="235" height="66" id="Insert_logo" /></a> 
+          </div>
+          <div class="content" align="center">
+            <div id="map" ></div>
+            <script type="text/javascript" src="leaflet.js"></script>
+            <script>
+            
+                var LatDB = 0;
+                var LonDB = 0;
+                
+                var marker;
+                
+                LatDB = 14.5987198;
+                LonDB = -90.50715;
+                var map = L.map('map').setView([LatDB, LonDB], 15);	
+                    
+                L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '<a href="http://www.tecdogt.com">TecDo S.A.&reg; GT </a>',
+                    maxZoom: 18					
+                }).addTo(map);
+                
+                marker = L.marker([LatDB, LonDB]).addTo(map);
+                marker.bindPopup("Ockland Mall, Zona 10").openPopup();
+				$("#map").height((window.innerHeight - 66));
+            </script>
+           </div>
+        </div>
+     <script type="text/javascript">
+     	$("#Contenedor").height((window.innerHeight - 124));  	
+	 </script>
+    </body>
+</html>

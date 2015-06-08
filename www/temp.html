@@ -1,0 +1,129 @@
+<script type="text/javascript">
+function ExportExcelTable(TableName, TabTitle, SheetTitle, Title) 
+{
+	var initRow=0, endRow=0, RowIndex=0, nFont = 10, nNumHoja=1;
+  	var Excel, libro, hoja, nColor;
+    var sMsg = "", sTbl="",sMsg2 = "*" ;
+    var sTitulo = "";
+    var bAuto = false;
+
+    
+    nTitleColor1	= RGB( 255, 250, 205);  
+  	nTitleColor2	= RGB( 100, 149, 237);  
+  
+	nBgrndColorPink = RGB( 230, 184, 183);  
+	nBgrndColorYellow = RGB( 255, 255, 204);  
+	nBgrndColorYellow2 = RGB( 255, 255, 0);  
+	nBgrndColorGreen = RGB( 216, 228, 188);  
+	nBgrndColorBlue = RGB( 220, 230, 241);  
+	nBgrndColorGray = RGB( 191, 191, 191);  
+	nBgrndColorGray2 = RGB( 217, 217, 217);  
+	nBgrndColorWhite = RGB( 255, 255, 255); 
+
+	document.body.style.cursor="wait";
+
+	Excel = new ActiveXObject("Excel.Application");
+	if (  typeof(Excel)=="undefined")
+	{
+	  alert( 'Debe habilitar el uso de activex en internet explorer options...' );
+	  return;
+	}
+
+	Excel.Visible = true;
+	libro = Excel.Workbooks.Add();
+	hoja = libro.Worksheets.Add();
+
+	fSetNameSheet( libro, 1, TabTitle, SheetTitle);
+
+	RowIndex=0;
+	sTitulo = Title;
+	nColor = nTitleColor1;
+	nNumHoja = 1;
+	sTbl = TableName;
+	RowIndex= RowIndex + 2;
+	sMsg = '' 
+	RowIndex = ftblpl( libro, nNumHoja, sTbl, RowIndex, nFont, sMsg, sPeriodo, sTitulo, nColor );  
+
+	alert( "Reporte generado... "); 
+	document.body.style.cursor="default"; 
+
+}
+
+function fReporte(periodo)
+{
+  var initRow=0, endRow=0, RowIndex=0, nFont = 10, nNumHoja=1;
+  var Excel, libro, hoja, nColor;
+  var sMsg = "", sTbl="",sMsg2 = "*" ;
+  var sTitulo = "";
+  var bAuto = false;
+  var sPeriodo = ""+periodo;
+  
+  var Pad = "00";
+  
+  sPeriodo = "P"+Pad.substring(0, Pad.length -sPeriodo.length)+sPeriodo;
+ 
+  
+  nTitleColor1	= RGB( 255, 250, 205);  
+  nTitleColor2	= RGB( 100, 149, 237);  
+  
+  nBgrndColorPink = RGB( 230, 184, 183);  
+  nBgrndColorYellow = RGB( 255, 255, 204);  
+  nBgrndColorYellow2 = RGB( 255, 255, 0);  
+  nBgrndColorGreen = RGB( 216, 228, 188);  
+  nBgrndColorBlue = RGB( 220, 230, 241);  
+  nBgrndColorGray = RGB( 191, 191, 191);  
+  nBgrndColorGray2 = RGB( 217, 217, 217);  
+  nBgrndColorWhite = RGB( 255, 255, 255);  
+  
+  document.body.style.cursor="wait";
+
+  Excel = new ActiveXObject("Excel.Application");
+  if (  typeof(Excel)=="undefined"){
+      alert( 'Debe habilitar el uso de activex en internet explorer options...' );
+      return;
+  }
+  Excel.Visible = true;
+  libro = Excel.Workbooks.Add()
+  hoja = libro.Worksheets.Add();
+
+  
+  //hoja = libro.Worksheets.Add();
+  fSetNameSheet( libro, 1, 'SmartViewP&L', 'WAELTI-SCHOENFELD EXPORTADORES DE CAFÉ, S.A.' );
+  fSetNameSheet( libro, 2, 'SmartViewBS', 'SmartViewBS' );
+  // libro 5: OpendDiff eliminado por requerimiento de acabrera a traves de maria rene -> fernando -> logicsoft
+  //fSetNameSheet( libro, 5, 'Open Diff', 'Listado Ventas Open Diferential' );
+  
+  //  p&l **********************************************************************************
+  RowIndex=0;
+  sTitulo = "P&L";
+  nColor = nTitleColor1;
+  nNumHoja = 1;
+  sTbl = "D_tblResumen1";
+  RowIndex= RowIndex + 2;
+  sMsg = '' 
+  RowIndex = ftblpl( libro, nNumHoja, sTbl, RowIndex, nFont, sMsg, sPeriodo, sTitulo, nColor );   
+
+  //  bs **********************************************************************************
+   RowIndex=0;
+  sTitulo = "BALANCE SHEET";
+  nColor = nTitleColor1;
+  nNumHoja = 2;
+  sTbl = "D_tblResumen2";
+  RowIndex= RowIndex + 2;
+  sMsg = '' 
+  nFont = 10;
+  RowIndex = ftblbs( libro, nNumHoja, sTbl, RowIndex, nFont, sMsg, sPeriodo, sTitulo, nColor );   
+
+alert( "Reporte generado... "); 
+document.body.style.cursor="default";
+
+  
+//  libro.SaveAs("C:\\test.xlsx");
+//  libro.Application.Quit();
+
+}
+
+
+</script>
+
+<input type="button" onClick="ExportExcelTable('', 'Rendimiento', '', '${title}')"/>

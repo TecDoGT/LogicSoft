@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <title>Login</title>
+    <link href="css/twoColLiqLtHdr.css" rel="stylesheet" type="text/css">
+    <link href="jquery-mobile/styles/messi.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery-mobile/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="jquery-mobile/js/messi.min.js"></script>
+    <script type="text/javascript">
+		function Redirec(v)
+		{
+			if (v == 0)
+			{
+				window.location="gpsMap.html";
+			}
+			else if (v == 1)
+			{
+				window.location="login.html";
+			}
+		}
+	</script>
+</head>
+<body id="Cuerpo">
+<script>
+	if (!window.sessionStorage.UserLogin)
+	{
+		window.location="login.html";
+	}
+</script>
+		<div id="Contenedor" class="container" align="center" >
+            <div class="header">
+                <a href="index.html"><img  src="images/logo.jpg" name="Insert_logo" width="235" height="66" id="Insert_logo" /></a> 
+          </div>
+          <div class="content" align="center">
+          	<table>
+            	<tr>
+                	<td align="center">
+                    <img class="metal radial" src="images/agencia.png" width="75" height="75" onClick="Redirec(0);"/>
+                    </td>
+                    <td >
+                    	<img class="metal radial" src="images/cartera.png" width="75" height="75" onClick="Redirec(2);"/>
+                    </td>
+                </tr>
+                <tr>
+                	<td >
+                   	  <img class="metal radial" src="images/promo.png" width="75" height="75" onClick="Redirec(2);"/>
+                    </td>
+                    <td >
+                   	  <img class="metal radial" src="images/bloqueo.png" width="75" height="75" onClick="Redirec(2);"/>
+                    </td>
+                </tr>
+                
+            </table>
+          </div>
+         <div class="footer">
+         
+         </div>
+        </div>  
+     <script type="text/javascript">
+     	$("#Contenedor").height((window.innerHeight - 124));  	
+	 </script>
+    </body>
+</html>

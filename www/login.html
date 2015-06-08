@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <title>Login</title>
+    <link href="css/twoColLiqLtHdr.css" rel="stylesheet" type="text/css">
+    <link href="jquery-mobile/styles/messi.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery-mobile/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="jquery-mobile/js/messi.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+
+<body id="Cuerpo">
+
+<script>
+	//if (window.sessionStorage.UserCode && window.sessionStorage.UserEmpresa && window.sessionStorage.UserLogin)
+	if (window.sessionStorage.UserLogin)
+	{
+		window.location="index.html";
+	}
+</script>
+
+    <div id="loadingAJAX" class="ajaxDiv" align="center">
+    	<br>
+        <img id="ajaxgif" src="jquery-mobile/styles/images/ajax-loader.gif" 
+            style=" position:absolute; 
+                    vertical-align:middle;
+                    width:80px; 
+                    height:80px"
+        />
+    </div>
+    <div id="Contenedor" class="container" align="center" >
+      <div class="header">
+      	<a href="index.html"><img  src="images/logo.jpg" name="Insert_logo" width="235" height="66" id="Insert_logo" /></a> 
+      </div>
+      <div class="content" align="center">
+        <h1 style="font-size:45px; color:#CCCCCC">Bienvenido</h1>
+        <form name="fLogIn" id="fLogIn">
+            
+            <input type="text" id="tbUserName" name="tbUserName" placeholder="Usuario" required autocomplete="off"/>
+            <input type="password" id="tbUserPassWord" name="tbUserPassWord" placeholder="Contrase&ntilde;a" required/>
+            <input type="checkbox" id="cbSesionPermanete" name="cbSesionPermanete" /> 
+            <label for="cbSesionPermanete" style="font-size:18px; color:#CCC">No cerrar sesi&oacute;n</label>
+            <input type="button"  value="Iniciar Sesi&oacute;n" onClick="ValEntrada();"/>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">
+     $("#Contenedor").height((window.innerHeight - 124));
+     
+     $("#loadingAJAX").width(window.innerWidth);
+     $("#loadingAJAX").height(window.innerHeight);
+     
+     $("#ajaxgif").css(
+	 	{ 
+            top: ((window.innerHeight / 2) - 80),
+            left: ((window.innerWidth / 2) - 40) 
+        });
+     $("#loadingAJAX").hide();
+    </script>
+</body>
+</html>
