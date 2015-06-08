@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.tecdogt.gpstracker" version="1.0.0">
-  <name>GpsTrack</name>
-  <description>Aplicacion para el ver el recorrido de un veiculo...</description>
+  <name>LogicSoftApp</name>
+  <description>App Demo LogicSoft Movile</description>
   <author href="http://tecdogt.com" email="info@tecdogt.com">Tecnologia y Domotica de Guatemala S.A</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
