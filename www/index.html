@@ -29,8 +29,18 @@
 				}
 				else
 				{
-					window.location="cartera.html";
+					window.location="cuentas.html";
 				}
+			}
+			else if (v == 5)
+			{
+				if (navigator.app) {
+                   navigator.app.exitApp();
+                }
+                else if (navigator.device) {
+                    navigator.device.exitApp();
+                }
+				//window.close();
 			}
 		}
 	</script>

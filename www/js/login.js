@@ -50,7 +50,7 @@ function ValEntrada ()
 					width: (window.innerWidth - 25),
 					callback: function (info)
 					{
-						window.location="cartera.html";
+						window.location="cuentas.html";
 					}
 				});
 		}
