@@ -23,21 +23,22 @@
 			}
 			else if (v == 2)
 			{
-				window.location="cartera.html";
+				if (!window.sessionStorage.UserLogin)
+				{
+					window.location="login.html";
+				}
+				else
+				{
+					window.location="cartera.html";
+				}
 			}
 		}
 	</script>
 </head>
 <body id="Cuerpo">
-<script>
-	if (!window.sessionStorage.UserLogin)
-	{
-		window.location="login.html";
-	}
-</script>
 		<div id="Contenedor" class="container" align="center" >
             <div class="header">
-                <a href="index.html"><img  src="images/logo.png" name="Insert_logo" width="156" height="123" id="Insert_logo" /></a> 
+                <a href="index.html"><img  src="images/FWsT3LFG.png" name="Insert_logo" width="100%" height="109" id="Insert_logo" /></a> 
           </div>
           <div class="content" align="center">
           	<table>
@@ -45,7 +46,7 @@
                 	<td align="center">
                     <img class="metal radial" name="btnAgencia" src="images/agencia.png" width="75" height="75" onClick="Redirec(0);" style="margin-bottom:0px"/>
                     <br/>
-                    <label for="btnAgencia" style="margin-bottom:40px; font-size:18px">Agencias</label>
+                    <label for="btnAgencia" style="margin-bottom:40px; font-size:18px">Sucursales</label>
                     </td>
                     <td align="center">
                     	<img class="metal radial" src="images/cartera.png" width="75" height="75" onClick="Redirec(2);" style="margin-bottom:0px"/>
@@ -57,12 +58,14 @@
                 	<td align="center">
                    	  <img class="metal radial" src="images/promo.png" width="75" height="75" onClick="Redirec(3);" style="margin-bottom:0px"/>
                     <br/>
-                    <label style="margin-bottom:40px; font-size:18px">Promociones</label>
+                    <label style="margin-bottom:40px; font-size:18px">Promociones<br>
+                    &nbsp;</label>
                     </td>
                     <td align="center">
                    	  <img class="metal radial" src="images/bloqueo.png" width="75" height="75" onClick="Redirec(4);" style="margin-bottom:0px"/>
                       <br/>
-                      <label style="margin-bottom:40px; font-size:18px">Bloqueos</label>
+                      <label style="margin-bottom:40px; font-size:18px">Operaciones <br>
+                      Rapidas</label>
                     </td>
                 </tr>
                 
@@ -72,6 +75,8 @@
          
          </div>
         </div>  
-     
+     <script type="text/javascript">
+     $("#Contenedor").height((window.innerHeight - 124));
+	 </script>
     </body>
 </html>

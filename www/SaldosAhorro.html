@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <title>Login</title>
+    <link href="css/twoColLiqLtHdr.css" rel="stylesheet" type="text/css">
+    <link href="jquery-mobile/styles/messi.min.css" rel="stylesheet" type="text/css">
+    <link href="jquery-mobile/styles/jquery.mobile-1.4.5.min.css" type="text/css">
+    
+    <script type="text/javascript" src="jquery-mobile/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="jquery-mobile/js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="jquery-mobile/js/messi.min.js"></script>
+    <script type="text/javascript">
+		function Redirec(v)
+		{
+			if (v == 0)
+			{
+				window.location="gpsMap.html";
+			}
+			else if (v == 1)
+			{
+				window.location="login.html";
+			}
+		}
+	</script>
+    <style>
+		th {
+			border-bottom: 1px solid #d6d6d6;
+		}
+		
+		tr:nth-child(even) {
+			background: #e9e9e9;
+		}
+		table
+		{
+			font-size:24px;
+			width:90%;
+		}
+		/*thead, tbody { display: block; }
+		tbody {
+			height: 100px;       
+			overflow-y: auto;    
+			overflow-x: hidden;  
+		}*/
+	</style>
+</head>
+<body id="Cuerpo">
+	<script>
+        if (!window.sessionStorage.UserLogin)
+        {
+            window.location="login.html";
+        }
+    </script>
+    <div id="Contenedor" class="container" align="center" >
+        <div class="header">
+            <a href="index.html"><img  src="images/FWsT3LFG.png" name="Insert_logo" width="100%" height="109" id="Insert_logo" /></a> 
+    </div>
+    <div class="content" align="center">
+    	<h1 style="font-size:45px; color:#CCCCCC">Ahorros</h1>
+        <table cellpadding="0" cellspacing="0" style="background-color:#CCCCCC"  id="myTable">
+          <thead>
+            <tr>
+              <th width="47%" data-priority="6">No. Cuenta</th>
+              <th width="53%">Saldo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center">3599-9</td>
+              <td align="right">Q500 &nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center">6339-5</td>
+              <td align="right">$100 &nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center">3583-9</td>
+              <td align="right">Q5,000.30 &nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center">3331-5</td>
+              <td align="right">Q80.10 &nbsp;</td>
+            </tr>
+    
+          </tbody>
+        </table>
+    </div>
+    <div class="footer">
+     
+    </div>
+    </div>  
+	<script type="text/javascript">
+    	$("#Contenedor").height((window.innerHeight - 124));  	
+    </script>
+    </body>
+</html>

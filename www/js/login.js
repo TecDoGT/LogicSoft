@@ -9,7 +9,7 @@ function ValEntrada ()
 	if (UName == "" || UPwd == "")
 	new Messi('Todos los campos son requeridos.', 
 				{
-					title: 'LogicSoft App', 
+					title: 'Micoope App', 
 					titleClass: 'anim error', 
 					buttons: 
 						[
@@ -36,7 +36,7 @@ function ValEntrada ()
 				
 				new Messi(Mensage, 
 				{
-					title: 'LogicSoft App', 
+					title: 'Micoope App', 
 					titleClass: 'success', 
 					buttons: 
 						[
@@ -50,7 +50,7 @@ function ValEntrada ()
 					width: (window.innerWidth - 25),
 					callback: function (info)
 					{
-						window.location="index.html";
+						window.location="cartera.html";
 					}
 				});
 		}
@@ -58,7 +58,7 @@ function ValEntrada ()
 		{
 			new Messi('Error al Iniciar Sesi&oacute;n...', 
 				{
-					title: 'LogicSoft App', 
+					title: 'Micoope App', 
 					titleClass: 'anim error', 
 					buttons: 
 						[
@@ -101,7 +101,7 @@ function ValEntrada ()
 				
 				new Messi(Mensage, 
 				{
-					title: 'LogicSoft App', 
+					title: 'Micoope App', 
 					titleClass: 'success', 
 					buttons: 
 						[
@@ -123,7 +123,7 @@ function ValEntrada ()
 			{
 				new Messi('Error al Iniciar Sesi&oacute;n...', 
 				{
-					title: 'LogicSoft App', 
+					title: 'Micoope App', 
 					titleClass: 'anim error', 
 					buttons: 
 						[
